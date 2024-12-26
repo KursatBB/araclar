@@ -165,52 +165,52 @@ if current_ip and current_port_status:
 # Sonuçları yazdırma
 print("Hosts and Ports:")
 for result in output_results:
-    print(f"  {result}")
+    print(f"{result}")
 
 # TLS 1.0 ve 1.1 olan hostları listele
 if vulnerable_hosts:
     print("\nHosts with TLSv1.0 or TLSv1.1:")
     for host in vulnerable_hosts:
-        print(f"  {host}")
+        print(f"{host}")
 
 # SSLv2 ve SSLv3 olan hostları listele
 if vulnerable_ssl_hosts:
     print("\nVulnerable SSL Hosts (SSLv2, SSLv3):")
     for host in vulnerable_ssl_hosts:
-        print(f"  {host}")
+        print(f"{host}")
 
 # SWEET32 zafiyeti olan hostları listele
 if sweet32_vulnerable_hosts:
     print("\nSWEET32 Vulnerables:")
     for host in sweet32_vulnerable_hosts:
-        print(f"  {host}")
+        print(f"{host}")
 
 # RC4 zafiyeti olan hostları listele
 if rc4_vulnerable_hosts:
     print("\nRC4 Vulnerables:")
     for host in rc4_vulnerable_hosts:
-        print(f"  {host}")
+        print(f"{host}")
 
 # POODLE zafiyeti olan hostları listele
 if poodle_vulnerable_hosts:
     print("\nPOODLE Vulnerable Hosts:")
     for host in poodle_vulnerable_hosts:
-        print(f"  {host}")
+        print(f"{host}")
 
 # Expired SSL Sertifikası içeren hostları listele
 if expired_cert_hosts:
     print("\nExpired SSL Certificate Hosts:")
     for host in expired_cert_hosts:
-        print(f"  {host}")
+        print(f"{host}")
 
 # Anonymous Cipher içeren hostları listele
 if anonymous_cipher_hosts:
     print("\nAnonymous Cipher Hosts:")
     for host in anonymous_cipher_hosts:
-        print(f"  {host}")
+        print(f"{host}")
 
 # Weak Signature Algorithm içeren hostları listele
 if weak_signature_hosts:
     print("\nWeak Signature Algorithm Hosts:")
     for host in weak_signature_hosts:
-        print(f"  {host}")
+        print(f"{host}")
