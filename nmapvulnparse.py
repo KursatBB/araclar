@@ -34,14 +34,17 @@ for i, line in enumerate(nmap_output):
         continue
 
     # HTTP/SSL ve SQL servislerini bulma
-    port_match_http = re.match(r"(\d+)/tcp\s+open\s+(?:ssl/)?http.*?Microsoft IIS httpd (\d+\.\d+)", line_stripped)
+    port_match_http = re.match(
+        r"(\d+)/tcp\s+open\s+(?:ssl/)?http.*?Microsoft (?:IIS|HTTPAPI) (httpd \d+\.\d+)", 
+        line_stripped
+    )
     if port_match_http:
         port = port_match_http.group(1)
-        iis_version = port_match_http.group(2)
-        current_ports[port] = f"Microsoft IIS {iis_version}"
+        service_version = port_match_http.group(2)
+        current_ports[port] = f"Microsoft {service_version}"
         http_hosts_info.append({
             "IP:Port": f"{current_ip}:{port}",
-            "Service Version": f"Microsoft IIS {iis_version}"
+            "Service Version": f"Microsoft {service_version}"
         })
         continue
 
